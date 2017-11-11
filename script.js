@@ -1,11 +1,11 @@
 function saveEvent(){
   var input = document.getElementById('loginInput');
-  localStorage.setItem('server', input.value);
-  displayEvent();
+  sessionStorage.setItem('server', input.value);
+  window.displayEvent();
 
 }
 
 function displayEvent(){
-  var storedValue = localStorage.getItem('server');
+  var storedValue = sessionStorage.getItem('server');
   document.getElementById('some_message').innerHTML = storedValue;
 }
