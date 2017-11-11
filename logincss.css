@@ -29,7 +29,7 @@ body {
 
 /* Part of the graphic box on login sceren */
 #innerLoginCircle {
-	width: 220px;
+	width: wa220px;
 	height: 220px;
 	/* background-image: url("images/CTLogo.png"); */
 	-webkit-border-radius: 125px;
