@@ -110,12 +110,13 @@
 #actContainer {
 	border-style: solid;
 	border-color: #9cb7e2;
+  border-width: 1%;
 	padding-top: 10%;
 	padding-bottom: 10%;
     padding-left: 5%;
-    padding-right: 3%;
+    padding-right: 5%;
 	text-align: left;
-    background-color: #cfccba;
+    background-color: #b2ffe4;
     color: black;
     font-weight: bold;
 }

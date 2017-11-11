@@ -1,6 +1,11 @@
 function saveEvent(){
   var input = document.getElementById('loginInput');
+  var day = document.getElementById('date');
+  for (i=0;i<eventArr;i++){
+    sessionStorage.setItem(''+i,)
+  }
   sessionStorage.setItem('server', input.value);
+  var
   window.displayEvent();
 
 }
