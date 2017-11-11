@@ -1,0 +1,98 @@
+body {
+  background-color: #a3c2ba;
+}
+#msgBanner{
+  height: 100px;
+  width: 100%;
+  background-color: #41596b;
+  margin-top: 5%;
+}
+
+#bannerText{
+  font-size: 30px;
+  position: relative;
+  top: 25%;
+  color: black;
+  font-weight: bold;
+}
+
+#recipientBanner{
+  height:90px;
+  width: 100%;
+  background-color: white;
+  margin-top: 0%;
+}
+
+#rbText{
+  font-size:25px;
+  position: relative;
+  top:30%;
+  margin-left: 30px;
+}
+
+#addRecip{
+  width: 5%;
+  margin-left: 91%;
+  position: relative;
+  margin-top: -3%;
+}
+
+#eventInputs{
+  font-size: 29px;
+  color: #c9d7e5;
+  width: 80%;
+  margin: 30px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 5px 50px;
+  border: 5px solid white;
+  border-radius: 15%;
+  box-sizing: border-box;
+  height: 80%;
+}
+
+#bottomNav {
+  background-color: #cfccba;
+  padding-top: 4%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+#loginInput {
+  font-size: 48px;
+  padding-bottom: 8%;
+}
+
+#pageHeader {
+    text-align: right;
+    font-size: 64px;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-bottom: 4%;
+    color: white;
+}
+
+#formTop {
+  padding-left: 3%;
+}
+
+#loginButton {
+  font-size: 56px;
+  padding: 5%;
+}
+
+#eventInfo {
+  background-color: white;
+  font-size: 56px;
+  width: 85%;
+  padding-top: 2%;
+  padding-bottom: 4%;
+  padding-left: 2%;
+}
+
+#loginButtonRyan {
+  font-size: 56px;
+  padding: 5%;
+  width: 75%;
+}

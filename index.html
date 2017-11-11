@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title> HOME, RECENT ACTIVITIES </title>
+    <meta charset="utf-8"/>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900'
+      rel='stylesheet' type='text/css'>
+    <!--<link rel="stylesheet" type="text/css" href="main.css">-->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="connect.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+
+	<body id="mainBack">
+		<div class="container-fluid">
+
+			<!-- First generation, header buttons -->
+			<div class="col-xs-12" id="topBar">
+
+				<div class="col-xs-2">
+					<img onclick="openNav()" src="images/profile.png"> </a>
+				</div>
+				<div class="col-xs-2">
+
+					<img onclick="openNav2()" src="images/plus.png" > </a>
+
+	
+				</div>
+				<div class="col-xs-8">
+					<p id="pageHeader"> ConnectiviTree </p>
+				</div>
+			</div>
+
+			<!-- Header of middle bulk -->
+
+				<p id="recentTitle"> Recent Activity </p>
+
+
+			<!-- Activity Bulk -->
+			<div class="col-xs-12" id="actContainer">
+					<ul>
+						<li class="actItem">
+							<p class=actItem> - Billy has finished his homework! </p>
+						</li>
+						<li class="actItem">
+							<p> - Daughter Kimmer's flute recital is <a href="calendar.html">tomorrow!</a> </p>
+						</li>
+						<li class="actItem">
+							<p> - Grandma Becky <a href="calendar.html">invited</a> you to go "apple picking" at "Bushwick Farms".</p>
+						</li>
+					</ul>
+			</div>
+
+			<!-- Navigation bar at bottom -->
+			<div class="col-xs-12" id="bottomNav">
+				<div class="col-xs-3">
+					<img class="thumbnail" src="images/home.png" align="left">
+				</div>
+				<div class="col-xs-3">
+					<a href="sendMessage.html"> <img class="thumbnail" src="images/envelope.png" align="left"> </a>
+				</div>
+				<div class="col-xs-3">
+					<a href="familyTree.html"> <img class="thumbnail" src="images/family-tree.png" align="right">
+				</div>
+				<div class="col-xs-3">
+					<a href="calendar.html"> <img class="thumbnail" src="images/calendar.png" align="right"> </a>
+				</div>
+			</div>
+
+	    <!--<p> <a href="login.html" id="logout" style="font-size: 32px"> Logout </a></p> -->
+		</div>
+
+		<!-- The overlay -->
+		<div id="myNav" class="overlay">
+
+		  <!-- Button to close the overlay navigation -->
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+		  <!-- Overlay content -->
+		  <div class="overlay-content">
+		  	<h1 id="dropMainTitle"> Settings </h1>
+		  	<h3 id="dropSub"> Account Settings </h3>
+		  	<p id="menuDrop"> Change Profile Pic </p>
+		  	<p id="menuDrop"> Push Notifications Settings </p>
+		  	<h3 id="dropSub"> General Settings </h3>
+		  	<p id="menuDrop"> Font Size </p>
+		  </div>
+
+		</div>
+
+	    <!--<p> <a href="login.html" id="logout" style="font-size: 32px"> Logout </a></p> -->
+		</div>
+
+		<!-- The overlay -->
+		<div id="myNav2" class="overlay">
+
+		  <!-- Button to close the overlay navigation -->
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+
+		  <!-- Overlay content -->
+		  <div class="overlay-content">	  	
+		  	<h3 id="dropSub"> <a href="eventCreation.html" id="dropSub"> Add Event </h3>
+		  	<h3 id="dropSub"> <a  href="createMessage.html" id="dropSub"> Send Message </h3>
+		  </div>
+
+		</div>
+
+		<!-- Use any element to open/show the overlay navigation menu
+		<span onclick="openNav()">open</span> -->
+
+		<script type="text/javascript">
+			/* Open when someone clicks on the span element */
+		function openNav() {
+		    document.getElementById("myNav").style.width = "100%";
+		}
+
+		/* Close when someone clicks on the "x" symbol inside the overlay */
+		function closeNav() {
+		    document.getElementById("myNav").style.width = "0%";
+		}
+
+
+			/* Open when someone clicks on the span element */
+		function openNav2() {
+		    document.getElementById("myNav2").style.width = "100%";
+		}
+
+		/* Close when someone clicks on the "x" symbol inside the overlay */
+		function closeNav2() {
+		    document.getElementById("myNav2").style.width = "0%";
+		}
+		</script>
+	</body>
+</html>
