@@ -4,48 +4,58 @@
 		<meta charset="utf-8">
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="script.js"></script>
 			<link rel="stylesheet" href="sendMessage.css">
 	</head>
 
 	<body>
-		<div class="col-xs-12" >
-			<p id="pageHeader"> Create Event </p>
-		</div>
+		<div class="container-fluid">
+			<div class="col-xs-12" >
+				<p id="pageHeader"> Create Event </p>
+			</div>
 
-		<div id="formTop">
-			<input id="eventNameInput" type="text" name="EventName" >
-			<small> Event Name </small>
-			<input id="dateInput" type="date" name="Date">
-			<small> Day </small>
-			<!--<p> <input id="loginInput" type="time" name="Time" value="Time"> </p>
-			<p> <input id="loginInput" type="text" name="Description" value="Description"> </p>
-			<p> <input id="loginInput" type="text" name="PickMember" value="Add this Event to Family Calendars"> </p>
-		-->
+			<div class="form-group">
+				<label for="eventName">event title</label>
+				<input id="eventNameInput" class="form-control" type="text" name="EventName" placeholder="Enter your event name!" >
+			</div>
+
+			<div class="form-group">
+				<label for="eventDate">date</label>
+				<input id="dateInput" class="form-control" type="date" name="eventDate">
+			</div>
+
+			<div class="form-group">
+				<label for="eventDescrip">description</label>
+				<input id="descripInput" class="form-control" type="text" name="eventDescrip" placeholder="Enter your event description!">
+			</div>
+				<!--<p> <input id="loginInput" type="time" name="Time" value="Time"> </p>
+				<p> <input id="loginInput" type="text" name="Description" value="Description"> </p>
+				<p> <input id="loginInput" type="text" name="PickMember" value="Add this Event to Family Calendars"> </p>
+			-->
 			<button id="submitEvent" onclick=saveEvent()> Create </button>
 
 			<p id ="some_message"></p>
-			<span id ="some_message2"></span>
-			<button onclick="incTest()"> click </button>
+			<p id ="some_message2"></p>
+			<p id ="some_message3"></p>
 
-		</div>
-		<!-- Bottom Nav -->
+			<!-- Bottom Nav -->
 
-		<div class="col-xs-12" id="bottomNav">
-				<div class="col-xs-3">
-					<a href="index.html"> <img class="thumbnail" src="images/home2.png" align="left"> </a>
-				</div>
-				<div class="col-xs-3">
-					<a href="sendMessage.html"> <img class="thumbnail" src="images/envelope.png" align="left"> </a>
-				</div>
-				<div class="col-xs-3">
-					<a href="familyTree.html"> <img class="thumbnail" src="images/family-tree.png" align="right"> </a>
-				</div>
-				<div class="col-xs-3">
-					<a href="calendar.html"> <img class="thumbnail" src="images/calendar.png" align="right"> </a>
-				</div>
+			<div class="col-xs-12" id="bottomNav">
+					<div class="col-xs-3">
+						<a href="index.html"> <img class="thumbnail" src="images/home2.png" align="left"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="sendMessage.html"> <img class="thumbnail" src="images/envelope.png" align="left"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="familyTree.html"> <img class="thumbnail" src="images/family-tree.png" align="right"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="calendar.html"> <img class="thumbnail" src="images/calendar.png" align="right"> </a>
+					</div>
+			</div>
 		</div>
 	</body>
 </html>
