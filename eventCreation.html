@@ -10,30 +10,32 @@
 			<link rel="stylesheet" href="sendMessage.css">
 	</head>
 
-	<body onload="displayEvent()">
+	<body>
 		<div class="col-xs-12" >
 			<p id="pageHeader"> Create Event </p>
 		</div>
 
 		<div id="formTop">
-			<form onsubmit="saveEvent()">
-				<p> <input id="loginInput" type="text" name="EventName" > </p>
-				<!--
-				<p> <input id="loginInput" type="date" name="Date" value="Date"> </p>
-				<p> <input id="loginInput" type="time" name="Time" value="Time"> </p>
-				<p> <input id="loginInput" type="text" name="Description" value="Description"> </p>
-				<p> <input id="loginInput" type="text" name="PickMember" value="Add this Event to Family Calendars"> </p>
-			-->
-				<p> <input id="loginButton" type="submit" value="Create"> </p>
+			<input id="eventNameInput" type="text" name="EventName" >
+			<small> Event Name </small>
+			<input id="dateInput" type="date" name="Date">
+			<small> Day </small>
+			<!--<p> <input id="loginInput" type="time" name="Time" value="Time"> </p>
+			<p> <input id="loginInput" type="text" name="Description" value="Description"> </p>
+			<p> <input id="loginInput" type="text" name="PickMember" value="Add this Event to Family Calendars"> </p>
+		-->
+			<button id="submitEvent" onclick=saveEvent()> Create </button>
 
-			</form>
-			<p id ="some_message"></span>
+			<p id ="some_message"></p>
+			<span id ="some_message2"></span>
+			<button onclick="incTest()"> click </button>
+
 		</div>
 		<!-- Bottom Nav -->
 
 		<div class="col-xs-12" id="bottomNav">
 				<div class="col-xs-3">
-					<a href="index.html"> <img src="images2/home.png" align="left"> </a>
+					<a href="index.html"> <img class="thumbnail" src="images/home2.png" align="left"> </a>
 				</div>
 				<div class="col-xs-3">
 					<a href="sendMessage.html"> <img class="thumbnail" src="images/envelope.png" align="left"> </a>
