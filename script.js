@@ -2,7 +2,7 @@
 
 // This string will basically serve as a hash key for finding events
 var accessString;
-
+var selectedDay = 11;
 
 function initEventArr(){
   sessionStorage.setItem('eventIndex', 0);
@@ -77,5 +77,10 @@ function displayEvent(){
 
     }
   }
+}
 
+function selectDay( day ){
+  selectedDay = day;
+  console.log(selectedDay);
+  document.getElementById('day1').className = "active";
 }
