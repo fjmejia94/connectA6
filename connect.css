@@ -1,17 +1,21 @@
 #screen{
-      background-color: #35407a;
+  background-color: #35407a;
 }
 
 #bottomNav {
   background-color: #3ea583;
 	text-align: center;
-	position: fixed;
+	position:fixed;
 	bottom: 0%;
 }
 
+/* Makes room for nav bar */
+#content{
+  margin-bottom: 13%;
+}
 
 #pageHeader {
-	font-size: 96px;
+	font-size: 5em;
 	font-weight: bold;
 	text-align: center;
 }
@@ -121,7 +125,7 @@
 }
 
 .actItem {
-	font-size: 64px;
+	font-size: 2em;
 }
 
 #pageHeader {
@@ -157,7 +161,7 @@
     position: absolute;
     bottom: -70;
 }
-
+/* Commenting this out bc it's messing with -all- input of type=text
 input[type=text], select {
     width: 85%;
     margin: 8px 0;
@@ -170,6 +174,7 @@ input[type=text], select {
     bottom: -75;
     padding-left: 3%;
 }
+*/
 
 #firstGen {
     padding-top: 5%;
@@ -305,28 +310,119 @@ body {font-family: Verdana, sans-serif;}
 }
 
 #month {
-    font-size: 64px;
+    font-size: 4em;
 }
 
 #eventInDay {
     padding-top: 3%;
+    padding-bottom: 13%;
 }
 
 #eventsTitle {
-    font-size: 48px;
+    font-size: 3em;
     font-weight: bold;
 }
 
 #dayContent {
-    font-size: 36px;
+    font-size: 2em;
 }
 
 #familyNames {
-    font-size: 36px;
+    font-size: 2em;
     font-weight: bold;
     color: black;
 }
 
 #eventInDayRyan {
     display: block;
+}
+
+body {
+  background-color: #a3c2ba;
+}
+#msgBanner{
+  height: 100px;
+  width: 100%;
+  background-color: #41596b;
+  margin-top: 5%;
+}
+
+#bannerText{
+  font-size: 3em;
+  position: relative;
+  top: 25%;
+  color: black;
+  font-weight: bold;
+}
+
+#recipientBanner{
+  height: 5%;
+  width: 100%;
+  background-color: white;
+}
+
+#rbText{
+  font-size:2em;
+  position: relative;
+  top:30%;
+  margin-left: 30px;
+}
+
+#addRecip{
+  width: 5%;
+  margin-left: 91%;
+  position: relative;
+  margin-top: -3%;
+}
+
+#eventInputs{
+  font-size: 2em;
+  color: #c9d7e5;
+  width: 80%;
+  border: 5px solid white;
+  border-radius: 15%;
+  box-sizing: border-box;
+  height: 80%;
+}
+
+#loginInput {
+  font-size: 2em;
+  padding-bottom: 8%;
+}
+
+#pageHeader {
+    text-align: right;
+    font-size: 4em;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-bottom: 4%;
+    color: white;
+}
+
+#formTop {
+  padding-left: 3%;
+}
+
+#loginButton {
+  font-size: 3em;
+  padding: 5%;
+}
+
+#eventInfo {
+  background-color: white;
+  font-size: 3em;
+  width: 85%;
+  padding-top: 2%;
+  padding-bottom: 4%;
+  padding-left: 2%;
+}
+
+#loginButtonRyan {
+  font-size: 3em;
+  padding: 5%;
+  width: 75%;
+}
+
+#logout {
+  position:relative;
 }

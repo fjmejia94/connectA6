@@ -16,42 +16,67 @@
 
 	<body id="mainBack" >
 		<div class="container-fluid">
-
+			<div id="content">
 			<!-- First generation, header buttons -->
 			<div class="row">
-			<div class="col-xs-12" id="topBar">
+				<div class="col-xs-12" id="topBar">
 
-				<div class="col-xs-2">
-					<img onclick="openNav()" src="images/profile.png"> </a>
-				</div>
-				<div class="col-xs-2">
-					<img onclick="openNav2()" src="images/plus.png" > </a>
-				</div>
+					<div class="col-xs-2">
+						<img onclick="openNav()" src="images/profile.png"> </a>
+					</div>
+					<div class="col-xs-2">
 
-			  <div class="col-xs-3">
-				</div>
+						<button type="button" class= "btn" onclick="openNav2()"> Add Event / Send Msg</button>
+					</div>
 
-				<div class="col-xs-3">
-					<img src="images/ConnectiviTree.png"> </a>
-				</div>
+				  <div class="col-xs-3">
+					</div>
 
-				<div class="col-xs-2">
-					<img src="images/Logo2.png"></a>
+					<div class="col-xs-3">
+						<img src="images/ConnectiviTree.png"> </a>
+					</div>
+
+					<div class="col-xs-2">
+						<img src="images/Logo2.png"></a>
+					</div>
 				</div>
 			</div>
-		</div>
 
 
 			<!-- Header of middle bulk -->
 
-				<p id="recentTitle"> Recent Activity </p>
+			<p id="recentTitle"> Recent Activity </p>
 
 
 			<!-- Activity Bulk -->
 			<div class="col-xs-12" id="actContainer">
 					<ul>
 						<li class="actItem">
-							<p class=actItem> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
+							<p> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jasmine finished reminder: <a href="calendar.html">take the trash out</a> </p>
+						</li>
+						<li class="actItem">
+							<p> - Benjamin asked permission: <a href="calendar.html">Movie w/Joshua</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Bernard finished reminder: <a href="calendar.html">take insulin</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jasmine finished reminder: <a href="calendar.html">take the trash out</a> </p>
+						</li>
+						<li class="actItem">
+							<p> - Benjamin asked permission: <a href="calendar.html">Movie w/Joshua</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Bernard finished reminder: <a href="calendar.html">take insulin</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
 						</li>
 						<li class="actItem">
 							<p> - Jasmine finished reminder: <a href="calendar.html">take the trash out</a> </p>
@@ -63,8 +88,10 @@
 							<p> - Bernard finished reminder: <a href="calendar.html">take insulin</a></p>
 						</li>
 					</ul>
-					<p> <a href="login.html" id="logout" style="font-size: 32px"> Logout </a>
 			</div>
+			<a href="login.html" role="button" class="btn btn-default">Logout</a>
+		</div>
+
 
 			<!-- Navigation bar at bottom -->
 			<div class="row">

@@ -11,49 +11,56 @@
 
 	<body id="mainBack">
 
-			<div id="dropdown">
-				<p id="xbutton" onclick="dropdownNav()"> X </p>
-				<p id="eventAdd"> <a href="ryanEvent.html"> Add Event to their Calendar </a> </p>
-				<p id="sendMessage"> <a href="sendMessage.html"> Send Message </a> </p>
-			</div>
+		<div id="dropdown">
+			<p id="xbutton" onclick="dropdownNav()"> X </p>
+			<p id="eventAdd"> <a href="ryanEvent.html"> Add Event to their Calendar </a> </p>
+			<p id="sendMessage"> <a href="sendMessage.html"> Send Message </a> </p>
+		</div>
 
-			<div id="transparent-back"></div>
-		<!-- Top bar -->
+		<div id="transparent-back"></div>
+
 		<div class="container-fluid">
-			<div class="col-xs-12">
-					<p id="pageHeader"> Lopez' Family Tree </p>
-			</div>
-
-			<div class="col-xs-12">
-				<div class="col-xs-6" id="memberSearch">
-					<button id="addMember" onclick="openNav()"> + Add Member </button>
+			<div id="content">
+				<!-- Header -->
+				<div class="col-xs-12">
+						<p id="pageHeader"> Lopez' Family Tree </p>
 				</div>
-				<div class="col-xs-6">
-    				<input type="text" placeholder="Enter Username" name="uname" required>
-    			</div>
-			</div>
+				<!-- Top bar -->
+				<div class="row">
+					<div class="col-xs-6" id="memberSearch">
+						<button id="addMember" onclick="openNav()"> + Add Member </button>
+					</div>
+					<div class="col-xs-6">
+	    				<input type="text" placeholder="Enter Username" name="uname" required>
+	    			</div>
+				</div>
 
-			<!-- white space -->
-			<div class="col-xs-12" id="space">
-			</div>
+				<!-- white space -->
+				<div class="col-xs-12" id="space">
+				</div>
 
-			<div id= "firstGen" class="col-xs-12">
 				<!-- First generation -->
-				<div class="col-xs-3" align="center">
-					<img onclick="dropdownNav()" src="images/gramps2.png">
-					<p id="familyNames"> Rob </p>
-				</div>
-				<div class="col-xs-3"> </div>
-				<div class="col-xs-3">
-					<img onclick="dropdownNav()" src="images/gramps1.png">
-					<p id="familyNames"> Carlos </p>
-				</div>
-				<div class="col-xs-3" align="center">
-					<img onclick="dropdownNav()" src="images/gramma.png">
-					<p id="familyNames"> Rachel </p>
+				<div id= "firstGen" class="col-xs-12">
+					<!--
+					<div class="col-xs-3" align="center">
+						<img onclick="dropdownNav()" src="images/gramps2.png">
+						<p id="familyNames"> Rob </p>
+					</div>
+					<div class="col-xs-3"> </div>
+					<div class="col-xs-3">
+						<img onclick="dropdownNav()" src="images/gramps1.png">
+						<p id="familyNames"> Carlos </p>
+					</div>
+				-->
+					<div class="col-xs-9" align="center"></div>
+					<div class="col-xs-3" align="center">
+						<img onclick="dropdownNav()" src="images/gramma.png">
+						<p id="familyNames"> Rachel </p>
+					</div>
 				</div>
 
 				<!-- arrow space -->
+				<!--
 				<div id="arrows" class="col-xs-3" align="center">
 					<img src="images/d_right.png">
 				</div>
@@ -61,6 +68,16 @@
 				</div>
 				<div id="arrows" class="col-xs-3" align="center">
 					<img src="images/d_right.png">
+				</div>
+				<div id="arrows" class="col-xs-3" align="center">
+					<img src="images/d_left.png">
+				</div>
+				-->
+				<div id="arrows" class="col-xs-3" align="center">
+				</div>
+				<div id="arrows" class="col-xs-3" align="center">
+				</div>
+				<div id="arrows" class="col-xs-3" align="center">
 				</div>
 				<div id="arrows" class="col-xs-3" align="center">
 					<img src="images/d_left.png">
@@ -71,13 +88,20 @@
 				</div>
 
 				<!-- Second gen -->
-				<div class="col-xs-6" align="center">
-					<img src="images/dad.png">
-					<p id="familyNames"> Me </p>
-				</div>
-				<div class="col-xs-6" align="center">
-					<img onclick="dropdownNav()" src="images/Mom.png" >
-					<p id="familyNames"> Leila </p>
+				<div id="secondGen" class="col-xs-12">
+					<div class="col-xs-5" align="right">
+						<img src="images/dad.png">
+						<p id="familyNames"> Me </p>
+					</div>
+					<div class="col-xs-2" align="center">
+						<svg>
+	  					<line x1="0" y1="50" x2="100" y2="50" style="stroke:rgb(1,1,1);stroke-width:2" />
+						</svg>
+					</div>
+					<div class="col-xs-5" align="left">
+						<img onclick="dropdownNav()" src="images/Mom.png" >
+						<p id="familyNames"> Leila </p>
+					</div>
 				</div>
 
 
@@ -93,26 +117,53 @@
 				<div id="arrows" class="col-xs-3" align="center">
 				</div>
 
+
 				<!-- white space -->
 				<div class="col-xs-12" id="space">
 				</div>
 
 				<!-- Third generation -->
-				<div class="col-xs-3" align="center">
-					<img onclick="dropdownNav()" src="images/child1.png">
-					<p id="familyNames"> Meg </p>
+				<div id="thirdGen" class="col-xs-12">
+			<!--
+					<div class="col-xs-3" align="center">
+						<img onclick="dropdownNav()" src="images/child2.png">
+						<p id="familyNames"> Ryan </p>
+					</div>
+					-->
+					<div class="col-xs-3" align="center">
+					</div>
+					<div class="col-xs-3" align="center">
+						<img onclick="dropdownNav()" src="images/child3.png">
+						<p id="familyNames"> Ryan </p>
+					</div>
+					<div class="col-xs-3" align="center">
+						<img onclick="dropdownNav()" src="images/child1.png">
+						<p id="familyNames"> Meg </p>
+					</div>
+					<div class="col-xs-3" align="center">
+					</div>
 				</div>
-				<div class="col-xs-3" align="center">
-					<img onclick="dropdownNav()" src="images/child2.png">
-					<p id="familyNames"> Ryan </p>
-				</div>
-				<div class="col-xs-3" align="center">
-					<img onclick="dropdownNav()" src="images/child3.png">
-					<p id="familyNames"> Alex </p>
-				</div>
-				<div class="col-xs-3" align="center">
+
+			</div>
+
+			<!-- Navigation bar at bottom -->
+			<div class="row">
+				<div class="col-xs-12" id="bottomNav">
+					<div class="col-xs-3">
+						<a href="index.html"> <img src="images/home.png" align="center"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="sendMessage.html"> <img src="images/message.png" align="center"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="familyTree.html"> <img src="images/familytree2.png" align="center"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="calendar.html"> <img src="images/calendar.png" align="center"> </a>
+					</div>
 				</div>
 			</div>
+		</div>
 
 
 			<!-- The overlay -->
@@ -158,24 +209,5 @@
 				}
 			}
 			</script>
-
-
-			<!-- Navigation bar at bottom -->
-			<div class="row">
-				<div class="col-xs-12" id="bottomNav">
-					<div class="col-xs-3">
-						<a href="index.html"> <img src="images/home.png" align="center"> </a>
-					</div>
-					<div class="col-xs-3">
-						<a href="sendMessage.html"> <img src="images/message.png" align="center"> </a>
-					</div>
-					<div class="col-xs-3">
-						<a href="familyTree.html"> <img src="images/FamilyTree2.png" align="center"> </a>
-					</div>
-					<div class="col-xs-3">
-						<a href="calendar.html"> <img src="images/calendar.png" align="center"> </a>
-					</div>
-				</div>
-			</div>
 	</body>
 </html>

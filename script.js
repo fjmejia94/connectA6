@@ -42,16 +42,20 @@ function displayEvent( day ){
     var eventStr = 'event' + i;
     var eventObj = JSON.parse(sessionStorage.getItem(eventStr));
     if (eventObj.date == desiredDate){
-      console.log(eventObj);
-      document.getElementById('dayContent1').innerHTML = eventObj.name;
-      document.getElementById('dayContent2').innerHTML = eventObj.date;
-      document.getElementById('dayContent3').innerHTML = eventObj.descrip;
-
+      var newEvent = '<div class="panel panel-primary"> \
+                				<div class="panel-heading">' + eventObj.name + '</div> \
+                				<div class="panel-body"> \
+                          <p>' + eventObj.date + '</p> \
+                          <p>' + eventObj.descrip + '</p> \
+                				</div> \
+                			</div>';
+      document.getElementById('dayContent1').innerHTML += (newEvent);
     }
   }
 }
 
 function selectDay( day ){
+  clearEventDisplay();
   var dayStr = "day" + parseInt(selectedDay);
   document.getElementById(dayStr).className -= "active";
   dayStr = "day" + parseInt(day);
@@ -59,4 +63,15 @@ function selectDay( day ){
   selectedDay = day;
 
   displayEvent(selectedDay);
+}
+
+function clearEventDisplay(){
+  document.getElementById('dayContent1').innerHTML = "";
+}
+
+function resetEvent(){
+  // Reset form values
+  document.getElementById('eventNameInput').value = "";
+  document.getElementById('dateInput').value = "";
+  document.getElementById('descripInput').value = "";
 }
