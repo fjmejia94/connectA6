@@ -34,6 +34,7 @@ function saveEvent(){
 
 }
 
+// Takes var day, aka desired date to be displayed
 function displayEvent( day ){
   var desiredDate = "2017-11-" + day;
   var eventNum = parseInt(sessionStorage.getItem('eventIndex'));
@@ -74,4 +75,24 @@ function resetEvent(){
   document.getElementById('eventNameInput').value = "";
   document.getElementById('dateInput').value = "";
   document.getElementById('descripInput').value = "";
+}
+
+function returnMsgRecipient(){
+  var list = document.getElementsByName('rl')[0];
+  console.log( list.options[list.selectedIndex].value );
+  console.log( list.selectedIndex );
+
+}
+
+function clearMsg(){
+  document.getElementById('msgInput').value = "";
+}
+
+function sendMsg(){
+  var str = ' <div class="alert alert-success alert-dismissable fade in"> \
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
+              <strong>Message Sent!</strong> \
+              </div> ';
+
+  document.getElementById('msgAlert').innerHTML = str;
 }

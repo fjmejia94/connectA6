@@ -340,11 +340,13 @@ body {font-family: Verdana, sans-serif;}
 body {
   background-color: #a3c2ba;
 }
+
 #msgBanner{
-  height: 100px;
   width: 100%;
   background-color: #41596b;
-  margin-top: 5%;
+  margin-top: 2%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 #bannerText{
@@ -353,12 +355,15 @@ body {
   top: 25%;
   color: black;
   font-weight: bold;
+
 }
 
 #recipientBanner{
-  height: 5%;
+  height: auto;
   width: 100%;
-  background-color: white;
+  background-color: #d4e1eb;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 #rbText{
@@ -369,10 +374,9 @@ body {
 }
 
 #addRecip{
-  width: 5%;
-  margin-left: 91%;
-  position: relative;
-  margin-top: -3%;
+  width: 105%;
+  margin-top: 13%;
+
 }
 
 #eventInputs{
@@ -425,4 +429,8 @@ body {
 
 #logout {
   position:relative;
+}
+
+#sendMsgBtn{
+  margin-left:5%;
 }

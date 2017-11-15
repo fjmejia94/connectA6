@@ -7,17 +7,47 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="connect.css">
+			<script src="script.js"></script>
+	  <link rel="stylesheet" href="connect.css">
 	<body>
 		<div class="container-fluid">
-	    <div id="msgBanner">
-	      <p id="bannerText" style="text-align:center"> NEW MESSAGE </p>
-	    </div>
-	    <div id="recipientBanner">
-	      <p id="rbText" style="text-align:left"> To: </p>
-	      <img id = "addRecip" src="images/plus.png" alt="Logo">
-	    </div>
+			<div id="header" class="row">
 
+		    <div class="col-xs-12" id="msgBanner">
+		      <p id="bannerText" style="text-align:center"> NEW MESSAGE </p>
+		    </div>
+		    <div class="col-xs-12" id="recipientBanner">
+					<div class="col-xs-3">
+		      	<span id="rbText" style="text-align:left"> To: </span>
+					</div>
+					<div class="col-xs-7">
+						<select class="form-control" name ="rl" id="recipList">
+							<option>(Choose Recipient)</option>
+							<option>Leila</option>
+							<option>Meg</option>
+							<option>Rachel</option>
+							<option>Ryan</option>
+						</select>
+					</div>
+					<div class="col-xs-2">
+						<button onclick="returnMsgRecipient()">Check</button>
+						<!-- <img id = "addRecip" src="images/plus.png" alt="Logo"> -->
+					</div>
+		    </div>
+
+			</div>
+
+			<div class="content">
+				<div class="form-group" style="margin-top:40%">
+					<textarea rows="10" id="msgInput" class="form-control" type="text" name="msgInput" placeholder="Enter your message!"></textarea>
+				</div>
+				<div class="col-xs-8"></div>
+				<div class="col-xs-4">
+					<button id="sendMsgBtn" type="button" class="btn btn-success btn-lg" onclick=sendMsg()> Send </button>
+					<button id="sendMsgBtn" type="button" class="btn btn-default" onclick=clearMsg()> Clear </button>
+					<div id="msgAlert"></div>
+				</div>
+			</div>
 			<!-- Bottom Nav -->
 			<div class="row">
 				<div class="col-xs-12" id="bottomNav">
