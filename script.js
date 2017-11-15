@@ -12,14 +12,17 @@ function initEventArr(){
 function saveEvent(){
   // Figure which event you're on if on a single day
   var eventNum = sessionStorage.getItem('eventIndex');
+  var famCode = findFamCode(sessionStorage.getItem('selectedFam'));
 
   /* Using JSON.stringify */
   var eventObj =
   {
     name: document.getElementById('eventNameInput').value,
     date: document.getElementById('dateInput').value,
-    descrip: document.getElementById('descripInput').value
+    descrip: document.getElementById('descripInput').value,
+    member: famCode
   };
+
   var eventStr = 'event' + eventNum;
   sessionStorage.setItem(eventStr, JSON.stringify(eventObj));
 
@@ -27,12 +30,36 @@ function saveEvent(){
   eventNum = parseInt(eventNum) + 1;
   sessionStorage.setItem('eventIndex', eventNum);
 
+  eventAlert();
 
+  // Reset form values
+  resetEvent();
+}
+
+function eventAlert(){
+
+  var name = sessionStorage.getItem('selectedFam');
+  if (name == 0){
+    name = 'you';
+  }
+  if (name == 1){
+    name = 'Leila';
+  }
+  if (name == 2){
+    name = 'Meg';
+  }
+  if (name == 3){
+    name = 'Rachel';
+  }
+  if (name == 4){
+    name = 'Ryan';
+  }
+  console.log(name);
 
   // For Alerts
   var str = ' <div class="alert alert-success alert-dismissable fade in"> \
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
-              <strong> Event created! </strong> \
+              <strong> Event created for '+ name +'! </strong> \
               </div> ';
   console.log(document.getElementById('eventNameInput').value);
   // Edge case: If no message is written
@@ -44,19 +71,17 @@ function saveEvent(){
   }
   document.getElementById('eventAlert').innerHTML = str;
 
-  // Reset form values
-  resetEvent();
 }
 
 // Takes var day, aka desired date to be displayed
-function displayEvent( day ){
+function displayEvent( day, memb ){
   var desiredDate = "2017-11-" + day;
   var eventNum = parseInt(sessionStorage.getItem('eventIndex'));
   console.log(desiredDate);
   for (i=0;i<eventNum;i++){
     var eventStr = 'event' + i;
     var eventObj = JSON.parse(sessionStorage.getItem(eventStr));
-    if (eventObj.date == desiredDate){
+    if (eventObj.date == desiredDate && eventObj.member == memb){
       var newEvent = '<div class="panel panel-primary"> \
                 				<div class="panel-heading">' + eventObj.name + '</div> \
                 				<div class="panel-body"> \
@@ -69,7 +94,7 @@ function displayEvent( day ){
   }
 }
 
-function selectDay( day ){
+function selectDay( day, memb ){
   clearEventDisplay();
   var dayStr = "day" + parseInt(selectedDay);
   document.getElementById(dayStr).className -= "active";
@@ -77,7 +102,7 @@ function selectDay( day ){
   document.getElementById(dayStr).className = "active";
   selectedDay = day;
 
-  displayEvent(selectedDay);
+  displayEvent(selectedDay, memb);
 }
 
 function clearEventDisplay(){
@@ -135,7 +160,34 @@ function famSelect(index){
 
 function setRecip(){
   var list = document.getElementsByName('rl')[0];
-
   list.selectedIndex = sessionStorage.getItem('selectedFam');
-  console.log(list.selectedIndex);
+}
+
+function findFamCode(who){
+  var name = who;
+  if (name == 0){
+    name = '';
+  }
+  if (name == 1){
+    name = 'l';
+  }
+  if (name == 2){
+    name = 'm';
+  }
+  if (name == 3){
+    name = 'ra';
+  }
+  if (name == 4){
+    name = 'r';
+  }
+
+  return name;
+}
+
+function loadCal(who){
+  var famcode = findFamCode(who);
+  for (i=2;i<=31;i++){
+    var str = "<li onclick='selectDay('0" + i + "','" + famcode + "')'> <span id='day" + i + "'>" + i + "</span></li>";
+    document.getElementById('cul').innerHTML += str;
+  }
 }
