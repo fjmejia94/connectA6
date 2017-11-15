@@ -11,61 +11,103 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="script.js"></script>
 	</head>
 
-	<body id="mainBack">
+	<body id="mainBack" >
 		<div class="container-fluid">
-
+			<div id="content">
 			<!-- First generation, header buttons -->
-			<div class="col-xs-12" id="topBar">
+			<div class="row">
+				<div class="col-xs-12" id="topBar">
 
-				<div class="col-xs-2">
-					<img onclick="openNav()" src="images/profile.png"> </a>
-				</div>
-				<div class="col-xs-2">
+					<div class="col-xs-2">
+						<img onclick="openNav()" src="images/profile.png"> </a>
+					</div>
+					<div class="col-xs-2">
 
-					<img onclick="openNav2()" src="images/plus.png" > </a>
+						<button type="button" class= "btn" onclick="openNav2()"> Add Event / Send Msg</button>
+					</div>
 
-	
-				</div>
-				<div class="col-xs-8">
-					<p id="pageHeader"> ConnectiviTree </p>
+				  <div class="col-xs-3">
+					</div>
+
+					<div class="col-xs-3">
+						<img src="images/ConnectiviTree.png"> </a>
+					</div>
+
+					<div class="col-xs-2">
+						<img src="images/Logo2.png"></a>
+					</div>
 				</div>
 			</div>
 
+
 			<!-- Header of middle bulk -->
 
-				<p id="recentTitle"> Recent Activity </p>
+			<p id="recentTitle"> Recent Activity </p>
 
 
 			<!-- Activity Bulk -->
 			<div class="col-xs-12" id="actContainer">
 					<ul>
 						<li class="actItem">
-							<p class=actItem> - Billy has finished his homework! </p>
+							<p> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
 						</li>
 						<li class="actItem">
-							<p> - Daughter Kimmer's flute recital is <a href="calendar.html">tomorrow!</a> </p>
+							<p> - Jasmine finished reminder: <a href="calendar.html">take the trash out</a> </p>
 						</li>
 						<li class="actItem">
-							<p> - Grandma Becky <a href="calendar.html">invited</a> you to go "apple picking" at "Bushwick Farms".</p>
+							<p> - Benjamin asked permission: <a href="calendar.html">Movie w/Joshua</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Bernard finished reminder: <a href="calendar.html">take insulin</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jasmine finished reminder: <a href="calendar.html">take the trash out</a> </p>
+						</li>
+						<li class="actItem">
+							<p> - Benjamin asked permission: <a href="calendar.html">Movie w/Joshua</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Bernard finished reminder: <a href="calendar.html">take insulin</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jerome created event: <a href="calendar.html">2017 Family Reunion</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Jasmine finished reminder: <a href="calendar.html">take the trash out</a> </p>
+						</li>
+						<li class="actItem">
+							<p> - Benjamin asked permission: <a href="calendar.html">Movie w/Joshua</a></p>
+						</li>
+						<li class="actItem">
+							<p> - Bernard finished reminder: <a href="calendar.html">take insulin</a></p>
 						</li>
 					</ul>
 			</div>
+			<a href="login.html" role="button" class="btn btn-default">Logout</a>
+		</div>
+
 
 			<!-- Navigation bar at bottom -->
-			<div class="col-xs-12" id="bottomNav">
-				<div class="col-xs-3">
-					<img class="thumbnail" src="images/home.png" align="left">
-				</div>
-				<div class="col-xs-3">
-					<a href="sendMessage.html"> <img class="thumbnail" src="images/envelope.png" align="left"> </a>
-				</div>
-				<div class="col-xs-3">
-					<a href="familyTree.html"> <img class="thumbnail" src="images/family-tree.png" align="right">
-				</div>
-				<div class="col-xs-3">
-					<a href="calendar.html"> <img class="thumbnail" src="images/calendar.png" align="right"> </a>
+			<div class="row">
+				<div class="col-xs-12" id="bottomNav">
+					<div class="col-xs-3">
+						<a href="index.html"> <img src="images/home2.png" align="center"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="sendMessage.html"> <img src="images/message.png" align="center"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="familyTree.html"> <img src="images/familytree.png" align="center"> </a>
+					</div>
+					<div class="col-xs-3">
+						<a href="calendar.html"> <img src="images/calendar.png" align="center"> </a>
+					</div>
 				</div>
 			</div>
 
@@ -100,7 +142,7 @@
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
 
 		  <!-- Overlay content -->
-		  <div class="overlay-content">	  	
+		  <div class="overlay-content">
 		  	<h3 id="dropSub"> <a href="eventCreation.html" id="dropSub"> Add Event </h3>
 		  	<h3 id="dropSub"> <a  href="createMessage.html" id="dropSub"> Send Message </h3>
 		  </div>
