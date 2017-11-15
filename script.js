@@ -27,15 +27,14 @@ function saveEvent(){
   eventNum = parseInt(eventNum) + 1;
   sessionStorage.setItem('eventIndex', eventNum);
 
-  // Reset form values
-  resetEvent();
+
 
   // For Alerts
   var str = ' <div class="alert alert-success alert-dismissable fade in"> \
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
               <strong> Event created! </strong> \
               </div> ';
-
+  console.log(document.getElementById('eventNameInput').value);
   // Edge case: If no message is written
   if ( document.getElementById('eventNameInput').value == "" ){
     str = '<div class="alert alert-danger alert-dismissable fade in"> \
@@ -44,6 +43,9 @@ function saveEvent(){
            </div>';
   }
   document.getElementById('eventAlert').innerHTML = str;
+
+  // Reset form values
+  resetEvent();
 }
 
 // Takes var day, aka desired date to be displayed
