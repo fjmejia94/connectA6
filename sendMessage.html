@@ -9,9 +9,9 @@
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="script.js"></script>
 	  <link rel="stylesheet" href="connect.css">
-	<body onload="setRecip();displayMsg()">
+	<body onload="setRecip()">
 		<div class="container-fluid">
-			<div id="header" class="row" style:"position:fixed">
+			<div id="header" class="row">
 
 		    <div class="col-xs-12" id="msgBanner">
 		      <p id="bannerText" style="text-align:center"> NEW MESSAGE </p>
@@ -36,24 +36,17 @@
 
 			</div>
 
-			<div id="msgContent">
-				<div class="col-xs-12">
-					<p id="textBubble"></p>
+			<div class="content">
+				<div class="form-group" style="margin-top:40%">
+					<textarea rows="10" id="msgInput" class="form-control" type="text" name="msgInput" placeholder="Enter your message!"></textarea>
 				</div>
-			</div>
-			<div class="col-xs-12">
-				<div id="msgAlert"></div>
-			</div>
-			<div class="col-xs-12" id="msgSender">
-				<div class="form-group col-xs-10">
-					<textarea rows="3" id="msgInput" class="form-control" type="text" name="msgInput" placeholder="Enter your message!"></textarea>
-				</div>
-				<div class="col-xs-2">
+				<div class="col-xs-8"></div>
+				<div class="col-xs-4">
 					<button id="sendMsgBtn" type="button" class="btn btn-success btn-lg" onclick=sendMsg()> Send </button>
-					<button id="sendMsgBtn" type="button" class="btn btn-default" onclick="clearMsg();"> Clear </button>
+					<button id="sendMsgBtn" type="button" class="btn btn-default" onclick=clearMsg()> Clear </button>
+					<div id="msgAlert"></div>
 				</div>
 			</div>
-
 			<!-- Bottom Nav -->
 			<div class="row">
 				<div class="col-xs-12" id="bottomNav">

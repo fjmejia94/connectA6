@@ -14,23 +14,13 @@
   margin-bottom: 13%;
 }
 
-#msgContent{
-  margin-bottom: 13%;
-  
-  bottom: 7%;
-}
-
 #pageHeader {
 	font-size: 5em;
 	font-weight: bold;
 	text-align: center;
 }
 
-#msgAlert{
-  position:fixed;
-  bottom:12%;
-  margin-left:2%;
-}
+
 
 #space {
   height: 5%;
@@ -562,14 +552,7 @@ body {
 }
 
 #sendMsgBtn{
-  width:120%;
-  margin-bottom:5%;
-  margin-right:5%;
-}
-
-#msgSender{
-  position:fixed;
-  bottom:6%;
+  margin-left:5%;
 }
 
 /* Dropdown Button */
