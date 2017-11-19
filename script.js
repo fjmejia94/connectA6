@@ -5,8 +5,9 @@ var accessString;
 var selectedDay = 11;
 var selectedFam = 0;
 
-function initEventArr(){
+function initArrs(){
   sessionStorage.setItem('eventIndex', 0);
+  sessionStorage.setItem('msgIndex', 0);
 }
 
 function saveEvent(){
@@ -61,14 +62,16 @@ function eventAlert(){
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
               <strong> Event created for '+ name +'! </strong> \
               </div> ';
-  console.log(document.getElementById('eventNameInput').value);
+
+
   // Edge case: If no message is written
-  if ( document.getElementById('eventNameInput').value == "" ){
+  if ( document.getElementById('eventNameInput').value == "" || document.getElementById('dateInput').value == "" || document.getElementById('descripInput').value == ""){
     str = '<div class="alert alert-danger alert-dismissable fade in"> \
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
-                <strong>Give your event a name!</strong> \
+                <strong>Fill out all of the event info!</strong> \
            </div>';
   }
+
   document.getElementById('eventAlert').innerHTML = str;
 
 }
@@ -127,32 +130,7 @@ function clearMsg(){
   document.getElementById('msgInput').value = "";
 }
 
-function sendMsg(){
-  var str = ' <div class="alert alert-success alert-dismissable fade in"> \
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
-              <strong>Message sent to '+ msgRecipient() +'!</strong> \
-              </div> ';
-  var list = document.getElementsByName('rl')[0];
 
-  // Edge case: If no recip is selected
-  if ( list.selectedIndex == 0 ){
-    str = '<div class="alert alert-danger alert-dismissable fade in"> \
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
-                <strong>Choose a recipient!</strong> \
-           </div>';
-  }
-
-  // Edge case: If no message is written
-  if ( document.getElementById('msgInput').value == "" ){
-    str = '<div class="alert alert-danger alert-dismissable fade in"> \
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
-                <strong>Write your message first!</strong> \
-           </div>';
-  }
-
-  document.getElementById('msgAlert').innerHTML = str;
-  clearMsg();
-}
 
 function famSelect(index){
   sessionStorage.setItem('selectedFam',index);
@@ -192,10 +170,90 @@ function loadCal(who){
   }
 }
 
-/* When the user clicks on the button, 
+function clearMsgDisplay(){
+  document.getElementById('textBubble').innerHTML = "";
+}
+
+// Takes var day, aka desired date to be displayed
+function displayMsg(){
+  clearMsgDisplay();
+
+  var memb = document.getElementById('recipList').selectedIndex;
+  if (memb != sessionStorage.getItem('selectedFam')){
+    clearMsgDisplay();
+  }
+  var msgNum = parseInt(sessionStorage.getItem('msgIndex'));
+  if (memb>0){
+    for (i=0;i<msgNum;i++){
+
+      var msgStr = 'msg' + i;
+      var msgObj = JSON.parse(sessionStorage.getItem(msgStr));
+
+      if (msgObj.member == memb){
+
+        var newMsg = '<div class="panel-body"> \
+                  <p>' + msgObj.msg + '</p> \
+                 </div>';
+
+        document.getElementById('textBubble').innerHTML += (newMsg);
+      }
+    }
+  }
+}
+
+// Sends message into session storage
+function sendMsg(){
+
+  var famNum = document.getElementById('recipList').selectedIndex;
+  sessionStorage.setItem('selectedFam',famNum);
+  // Edge case: If no recip is selected
+  if (famNum == 0){
+    var str = '<div class="alert alert-danger alert-dismissable fade in"> \
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
+                <strong>Choose a recipient!</strong> \
+           </div>';
+    document.getElementById('msgAlert').innerHTML = str;
+    return;
+  }
+
+  var msgObj =
+  {
+    msg: document.getElementById('msgInput').value,
+    member: famNum
+  };
+
+  var msgStr = 'msg' + sessionStorage.getItem('msgIndex');
+  sessionStorage.setItem(msgStr, JSON.stringify(msgObj));
+
+  var str = ' <div class="alert alert-success alert-dismissable fade in"> \
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
+              <strong>Message sent to '+ msgRecipient() +'!</strong> \
+              </div> ';
+
+  // Edge case: If no message is written
+  if ( document.getElementById('msgInput').value == "" ){
+    str = '<div class="alert alert-danger alert-dismissable fade in"> \
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
+                <strong>Write your message first!</strong> \
+           </div>';
+  }
+
+  document.getElementById('msgAlert').innerHTML = str;
+  var newMsgIndex = parseInt(sessionStorage.getItem('msgIndex')) + 1;
+  sessionStorage.setItem('msgIndex', newMsgIndex);
+
+  displayMsg();
+}
+
+
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function calendarDrop() {
     document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function displayTest(){
+  console.log(document.getElementById('recipList').selectedIndex);
 }
 
 // Close the dropdown menu if the user clicks outside of it
